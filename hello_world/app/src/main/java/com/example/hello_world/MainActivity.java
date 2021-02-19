@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        images = new int[]{R.drawable.backdrop_america, R.drawable.backdrop_china, R.drawable.backdrop_japan};
+        images = new int[]{R.drawable.backdrop_america, R.drawable.backdrop_china, R.drawable.backdrop_rassia, R.drawable.backdrop_japan};
         backdrop = findViewById(R.id.layout);
         hello_text = (TextView) findViewById(R.id.text);
         change_button = (Button) findViewById(R.id.button);
@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pic_index++;
-                if(pic_index == 3){
+                if(pic_index == 4){
                     pic_index = 0;
-                    hello_text.setText("Hello World!");
+                    hello_text.setText("Hello World");
                 }
-                else if(pic_index == 1) hello_text.setText("你好，世界!");
+                else if(pic_index == 1) hello_text.setText("你好，世界");
+                else if(pic_index == 2) hello_text.setText("Привет, мир");
                 else hello_text.setText("こんにちは");
                 backdrop.setBackground(ContextCompat.getDrawable(getApplicationContext(), images[pic_index]));
             }
